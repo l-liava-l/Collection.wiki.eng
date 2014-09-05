@@ -1,4 +1,4 @@
-**add** add new element to collection and return object:
+**add** adds new element to collection and return object:
 
 * `boolean` `result` — true, if element was added;
 * `?` `key` — key or index the added element;
@@ -13,7 +13,7 @@ add(val, opt_keyOrParams) { return {result: boolean, key: ?, value: ?}; }
 ### Arguments
 
 1. `?` `val` — new element.
-2. `(?|Object)=` `opt_keyOrParams` — the key of the added property (only for objects) **OR** объект параметров метода.
+2. `(?|Object)=` `opt_keyOrParams` — the key of the added property (only for objects) **OR** the object of parametrs method.
 
 #### Available parameters
 
@@ -65,7 +65,7 @@ arr // [2, 1]
  */
 ```
 
-Если параметр равен `false`, то в случае отсутствия запрашиваемого свойства будет сгенерированно исключение,  иначе оно будет создано.
+If parametr is `false`, then if property is missing will be generate exception, or it will be created.
 
 ```js
 var obj = {};
