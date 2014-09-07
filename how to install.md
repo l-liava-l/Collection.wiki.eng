@@ -5,7 +5,7 @@ Collection was written on «pure» JavaScript and does not require dependences. 
 * worker;
 * addition to applications and etc.
 
-The only one condition is permissibility of operation `new Function` (for example: If you writing an addition for Google Chrome then you need to declare permission for eval in the manifest).
+The only one condition is permissibility of operation `new Function` (for example: if you writing an addition for Google Chrome you need to declare permission for eval in the manifest).
 
 For installing in a browser need to download this [file](https://github.com/kobezzza/Collection/blob/master/build/collection.min.js) or [lite version](https://github.com/kobezzza/Collection/blob/master/build/collection.light.min.js)
 
