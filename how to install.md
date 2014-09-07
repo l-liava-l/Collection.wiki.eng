@@ -1,11 +1,11 @@
-Collection was written on «pure» JavaScript and does not require dependens. Library can work in browsers (`IE 6+`, `FF`, `Chrome`) and in other environments: 
+Collection was written on «pure» JavaScript and does not require dependences. Library can work with browsers (`IE 6+`, `FF`, `Chrome`) and in other environments:
 
 * node.js;
 * node-webkit;
 * worker;
 * addition to applications and etc.
 
-The only one condition is permissibility operation `new Function` (for example, If you writing an addition for Google Chrome then need declare permission for eval in the  manifest).
+The only one condition is permissibility of operation `new Function` (for example: If you writing an addition for Google Chrome then you need to declare permission for eval in the manifest).
 
 For installing in a browser need to download this [file](https://github.com/kobezzza/Collection/blob/master/build/collection.min.js) or [lite version](https://github.com/kobezzza/Collection/blob/master/build/collection.light.min.js)
 
@@ -28,7 +28,7 @@ You can install the package using bower:
 ```bash
 bower install --save collection.js
 ```
-Library file is located at the address:
+Library's file is located at the address:
 
 * `collection.js/`
 	* `build/`
