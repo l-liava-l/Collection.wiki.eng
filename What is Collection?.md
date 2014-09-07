@@ -29,7 +29,7 @@ $C({a: 1, b: 2, c: 3, d: 4}).filter(function (el) {
 $C({a: 64, b: 16, c: 4}).map(Math.sqrt);
 ```
 
-As you can see, difference between Collection and native methods in the call special constructor `$C` because majority methods of Collection make interface similar with array API 
+As you can see, the difference between Collection and native methods is in the call of special constructor `$C` because the majority of methods of Collection make interface similar with array API
 
 Collection maintain the following types of data:
 * Array (`Array`);
@@ -40,8 +40,8 @@ Collection maintain the following types of data:
 * Generators;
 * Iterators (on base `@@iterator` protocol).
 
-Should be noted, what Collection does not implement polifils for old browsers, it's necessary to include polifils independently.
-In addition to the standart functionality Collection introduces a several aditional methods and extends the standart methods is non standart features
+Should be noted, that Collection does not implement polifils for old browsers, it's necessary to include polifils independently.
+In addition to the standart functionality Collection introduces a several aditional methods and extends the standart methods is non-standart features
 
 
 ```js
@@ -55,7 +55,7 @@ $C(document.querySelectorAll('.foo')).forEach(function () {
 	count: 10
 });
 
-// Return elements array, where each element the original array, 
+// Return elements array, where each element of the original array,
 // which > 1, multiplied by 2
 $C([1, 2, 3]).map(
 	function (el) { 
@@ -68,4 +68,4 @@ $C([1, 2, 3]).map(
 );
 ```
 
-Also implemented api for work with storages of data  (already have drivers for localStorage, sessionStorage и indexedDB) and several static methods, for example, [Collection.extend](https://github.com/kobezzza/Collection/wiki/extend) (more functionally than jQuery.extend). 
+Also implemented API for a work with storages of data  (already have drivers for localStorage, sessionStorage and indexedDB) and several static methods, for example, [Collection.extend](https://github.com/kobezzza/Collection/wiki/extend) (more functionally than jQuery.extend).
