@@ -1,13 +1,13 @@
-The standart JavaScript library has API for working with arrays, whith includes such methods as: `forEach`, `map`, `reduce` and etc. 
-Using them, is good practice to make code better and easier
+The standart JavaScript library has API for working with arrays, which includes such methods as: `forEach`, `map`, `reduce` and etc.
+Using them, is a good practice to make code better and easier
 
 ```js
-// Return array there each element more than one
+// Return array where each element more than one
 [1, 2, 3, 4].filter(function (el) { 
 	return el > 1; 
 });
 
-// Return array there each element got by extracting the square root
+// Return array where each element got by extracting the square root
 [64, 16, 4].map(Math.sqrt);
 ```
 
