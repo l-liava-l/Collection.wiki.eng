@@ -1,4 +1,4 @@
-Collection was written on «pure» JavaScript and does not require dependences. Library can work with browsers (`IE 6+`, `FF`, `Chrome`) and in other environments:
+Collection was written on «pure» JavaScript and does not require dependences. Library can work with browsers (`IE 6+`, `FF`, `Chrome`) and with other environments:
 
 * node.js;
 * node-webkit;
