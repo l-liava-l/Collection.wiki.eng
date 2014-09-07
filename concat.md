@@ -1,4 +1,4 @@
-**concat** concatenates selected object with the original collection and then return it (without regard to the additional context).
+**concat** concatenates selected object with original collection and then return it (without regard to the additional context).
 
 ## Interface
 
