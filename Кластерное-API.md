@@ -8,12 +8,12 @@ Cluster API is a unified set of methods, which provides functionality for workin
 
 ##  Option activity
 
-If any
+If any of cluster options is active then it using by default always
 Если какой либо из кластерных параметров назначен активным, то он используется по умолчанию всегда.
 
 ### keyword active
-
-Для универсального доступа к активному параметру в кластерных методах можно использовать специальное улючевое слово `active`.
+For universal access to active option in the cluster methodes you can to use special keyword `active`.
+Для универсального доступа к активному параметру в кластерных методах можно использовать специальное ключевое слово `active`.
 
 ## total API
 ### new_
@@ -26,6 +26,7 @@ Set of methods:
 * newNamespace
 * newVar
 
+add new active option but didn't add it to cluster
 добавляют новый активный параметр, но при этом не добавляют его в кластер.
 
 ```js
@@ -45,9 +46,11 @@ Set of methods: (пласт методов)
 * addNamespace
 * addVar
 
+add option to cluster but didn't make it the active 
 добавляют параметр в кластер, но не делают его активным.
 
-Существует 2 формы вызова метода:
+
+there are 2 forms of call of method: (существует 2 формы вызова метода)
 
 ```js
 var obj = $C();
@@ -61,6 +64,7 @@ obj.addCollection({foo: [1, 2, 3]});
 obj.get({id: 'foo'}) // [1, 2, 3]
 ```
 
+The second way let to add several values to the cluster
 Второй способ позволяет добавлять сразу несколько значений в кластер.
 
 ### addAndSet_
@@ -74,6 +78,7 @@ Set of methods:
 * addAndSetVar
 
 добавляют параметр в кластер и делают его активным.
+add a option to cluster and make it active  
 
 ```js
 var obj = $C();
@@ -94,6 +99,7 @@ Set of methods:
 * setVar
 
 делают указанный параметр активным.
+make specified option active
 
 ```js
 var obj = $C();
@@ -119,6 +125,7 @@ Set of methods:
 * dropVar
 
 удаляют указанный параметр из кластера.
+delete specified option from cluster
 
 ```js
 var obj = $C();
@@ -126,7 +133,8 @@ var obj = $C();
 obj.addCollection('foo', [1, 2, 3]);
 obj.addAndSetCollection('bar', [1, 2, 3]);
 
-// Можно также использовать ключевое слово active
+// Also you can to use keyword active Можно также использовать ключевое слово active
+
 obj.dropCollection('foo', 'bar');
 obj.get() // []
 ```
@@ -141,7 +149,7 @@ Set of methods:
 * updateNamespace
 * updateVar
 
-обновляют указанный кластерный параметр.
+update specified option of cluster обновляют указанный кластерный параметр.
 
 ```js
 var obj = $C();
@@ -167,6 +175,7 @@ Set of methods:
 * getVar
 
 возвращают значение кластерного параметра.
+return value of cluster option
 
 ```js
 var obj = $C();
@@ -179,6 +188,7 @@ obj.getCollection('foo') // [1]
 ```
 
 Пласт методов:
+Method's set
 
 * getCollections
 * getFilters
@@ -187,6 +197,7 @@ obj.getCollection('foo') // [1]
 * getVars
 
 возвращают сам кластер.
+returns the cluster itself
 
 ```js
 var obj = $C();
@@ -208,6 +219,7 @@ Set of methods:
 * activeVar
 
 либо возвращают ИД активного параметра в кластере (если таковой есть)
+Or return ID of active option of cluster (if there is) 
 
 ```js
 var obj = $C();
@@ -216,7 +228,8 @@ obj.addAndSetCollection('bar', [1, 2, 3]);
 obj.activeCollection() // 'bar'
 ```
 
-, либо логическое значение (в случае указания в вызове ИД)
+, либо логическое значение (если id указан в вызове)
+, or logical value (if ID is specified in call)
 
 ```js
 var obj = $C();
@@ -236,6 +249,7 @@ Set of methods:
 * isVarExists
 
 возвращают `true` если заданный параметр существует в кластере.
+return `true` if option exist in cluster
 
 ```js
 var obj = $C();
@@ -244,8 +258,8 @@ obj.addCollection('bar', [1, 2, 3]);
 obj.isCollectionExists('bar') // true
 ```
 
-## Дополнение
-### Кластер коллекций
+## Addition
+### Cluster of collections
 
 Кластер коллекций позволяет инкапсулировать в одном экземпляре Collection множество коллекций.
 В первую очередь это нужно для удобной работы с хранилищами данных.
