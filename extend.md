@@ -1,19 +1,22 @@
-**extend** расширяет свойства исходного объекта свойствами заданных и возвращает его в качестве ответа.
+**extend** extend propertes of original object from propertes of specified objects and return original object
+(расширяет свойства исходного объекта свойствами заданных и возвращает его в качестве ответа.)
 
-## Интерфейс
+## Interface
 
 ```js
 Collection.extend(deepOrParams, target, ...args) { return Object; }
 ```
 
-### Аргументы
+### Arguments
 
-1. `(boolean|Object)` `deepOrParams = false` — если параметр равен `true`, то свойства копируются рекурсивно **ИЛИ** объект параметров метода.
+1. `(boolean|Object)` `deepOrParams = false` — if option is "true" then all options will be recursively copied **OR** object of method parameters
+если параметр равен `true`, то свойства копируются рекурсивно **ИЛИ** объект параметров метода.
 
-2. `Object` `target` — расширяемый объект.
-3. `...Object` `args` — расширяющие объекты.
 
-#### Доступные параметры
+2. `Object` `target` — extending object.
+3. `...Object` `args` — extending from objects (расширяющие объекты.)
+
+#### available options (доступные параметры)
 
 * `deep`
 * `withAccessors`
@@ -31,6 +34,7 @@ Collection.extend(deepOrParams, target, ...args) { return Object; }
 ```
 
 Если параметр равен `true`, то при расширении происходит глубокий анализ внутренней структуры объекта, т.е. свойства копируются рекурсивно.
+If option is 'true then for extended will bi
 
 ```js
 var obj = {
