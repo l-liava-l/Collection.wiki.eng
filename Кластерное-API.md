@@ -263,6 +263,8 @@ obj.isCollectionExists('bar') // true
 
 Кластер коллекций позволяет инкапсулировать в одном экземпляре Collection множество коллекций.
 В первую очередь это нужно для удобной работы с хранилищами данных.
+Cluster of collections allow to encapsulate set of collections in one instance Collection
+In the first place it need to work with storages of data
 
 ```js
 var db = new Collection();
@@ -275,11 +277,12 @@ db.addCollection({
 db.saveAll();
 ```
 
-### Кластер фильтров
+### Filter's cluster Кластер фильтров
 
 Следует помнить, что если фильтр указан активным, то он применяется всегда по умолчанию во всех итерационных методах, причём он «совмещается» с фильтрами, которые указываются явно.
-
+Should be note: if filter is specified active then it will be use how default in all iteration methods, so it combined with filters, which is explicitly specified
 Фильтры можно задавать также, как и в итерационных методах, т.е. как функции, строковые сокращения или составные фильтры по ИД.
+
 
 ```js
 var db = new Collection([
@@ -300,21 +303,22 @@ db.addFilter({
 	extrim: 'getByLvlAndAge || getKoba'
 });
 
-// Получим значения по фильтру extrim
+// Get value with use filter extrim Получим значения по фильтру extrim
 db.get('extrim');
 
-// Установка активного фильтра
+// Set filter to active Установка активного фильтра
 db.setFilter('getKoba')
 
-// Сделаем запрос по фильтру getByLvlAndAge,
-// но т.к. у нас активный фильтр getKoba, то результирующий запрос будет типа getKoba && getByLvlAndAge
+// Make request with use filter getByLvlAndAge Сделаем запрос по фильтру getByLvlAndAge,
+// but because we use getKoba how active filter request have been type getKoba && getByLvlAndAge но т.к. у нас активный фильтр getKoba, то результирующий запрос будет типа getKoba && getByLvlAndAge
+
 db.get('getByLvlAndAge');
 
 // getKoba
 db.get();
 ```
 
-### Кластер контекстов
+### Context's cluster Кластер контекстов
 
 Контекст — это механизм Collection который позволяет задать «точку старта» для поиска и выборки элементов. Активный контекст, также как и фильтр, «совмещается» с указанным явно.
 
@@ -410,11 +414,11 @@ db.get(':i == ${tmpObj}[0]');
 
 var db = $C([1, 2, 3]);
 
-// НЕ ВЕРНО
+// AVOID
 db.get(':el !== ' + 1);
 db.get(':el !== ' + 2);
 
-// ВЕРНО (${...} == #{...})
+// CORRECTLY (${...} == #{...})
 db.get({filter: ':el !== #{val}', vars: {val: 1}});
 db.get({filter: ':el !== ${val}', vars: {val: 2}});
 ```
