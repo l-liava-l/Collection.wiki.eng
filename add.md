@@ -1,21 +1,21 @@
-**add** добавляет новый элемент в исходную коллекцию и возвращает объект вида:
+**add** adds new element to collection and return object:
 
-* `boolean` `result` — true, если элемент был добавлен;
-* `?` `key` — ключ или индекс добавленного элемента;
-* `?` `value` — значение добавленного элемента;
+* `boolean` `result` — true, if element was added;
+* `?` `key` — key or index the added element;
+* `?` `value` — value of the added element;
 
-## Интерфейс
+## Interface
 
 ```js
 add(val, opt_keyOrParams) { return {result: boolean, key: ?, value: ?}; }
 ```
 
-### Аргументы
+### Arguments
 
-1. `?` `val` — новый элемент.
-2. `(?|Object)=` `opt_keyOrParams` — ключ добавляемого свойства (только для объектов) **ИЛИ** объект параметров метода.
+1. `?` `val` — new element.
+2. `(?|Object)=` `opt_keyOrParams` — the key of the added property (only for objects) **OR** the object of parametrs method.
 
-#### Доступные параметры
+#### Available parameters
 
 * `key`
 * `unshift`
@@ -31,7 +31,7 @@ add(val, opt_keyOrParams) { return {result: boolean, key: ?, value: ?}; }
  */
 ```
 
-Параметр **key** позволяет задать ключ добавляемого элемента (только для объектов).
+The **key** parametr allows you to specify key to added element (only for object).
 
 ```js
 var obj = {};
@@ -48,7 +48,7 @@ obj // {foo: 1}
  */
 ```
 
-Если параметр равен `true`, то элемент будет добавлен в начало коллекции, а не в конец.
+If parametr is `true`, then element will be added in the beginning of the collection
 
 ```js
 var arr = [1];
@@ -65,7 +65,7 @@ arr // [2, 1]
  */
 ```
 
-Если параметр равен `false`, то в случае отсутствия запрашиваемого свойства будет сгенерированно исключение,  иначе оно будет создано.
+If parametr is `false`, then if property is missing will be generate exception, or it will be created.
 
 ```js
 var obj = {};
@@ -78,7 +78,7 @@ $C(obj).add(1, {context: 'foo > bar', key: 'value'}) /* {
 obj // {foo: {bar: {value: 1}}}
 ```
 
-### Примеры
+### examples
 
 ```js
 var arr = [1];
