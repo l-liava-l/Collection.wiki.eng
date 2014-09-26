@@ -8,12 +8,10 @@ Cluster's API is a unified set of methods, which provides functionality for a wo
 
 ##  Option activity
 
-If any of cluster options is active then it using by default always
-Если какой либо из кластерных параметров назначен активным, то он используется по умолчанию всегда.
+If any of cluster options is active then it always uses by default.
 
-### keyword active
-For universal access to active option in the cluster methodes you can to use special keyword `active`.
-Для универсального доступа к активному параметру в кластерных методах можно использовать специальное ключевое слово `active`.
+### Keyword "active"
+For universal access to active option in cluster's methodes you can use special keyword `active`.
 
 ## total API
 ### new_
@@ -26,8 +24,7 @@ Set of methods:
 * newNamespace
 * newVar
 
-add new active option but didn't add it to cluster
-добавляют новый активный параметр, но при этом не добавляют его в кластер.
+add a new active option but don't add it to cluster.
 
 ```js
 var obj = $C();
@@ -38,7 +35,7 @@ obj.get({id: 'active'}) // [1, 2, 3]
 
 ### add_
 
-Set of methods: (пласт методов)
+Set of methods:
 
 * addCollection
 * addFilter
@@ -46,11 +43,10 @@ Set of methods: (пласт методов)
 * addNamespace
 * addVar
 
-add option to cluster but didn't make it the active
-добавляют параметр в кластер, но не делают его активным.
+add an option to cluster but don't mark it active
 
 
-there are 2 forms of call of method: (существует 2 формы вызова метода)
+there are 2 forms of calling method:
 
 ```js
 var obj = $C();
@@ -64,8 +60,7 @@ obj.addCollection({foo: [1, 2, 3]});
 obj.get({id: 'foo'}) // [1, 2, 3]
 ```
 
-The second way let to add several values to the cluster
-Второй способ позволяет добавлять сразу несколько значений в кластер.
+The second way allows you to add multiple values ​​to a cluster.
 
 ### addAndSet_
 
