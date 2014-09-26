@@ -357,8 +357,8 @@ db.get('0'); // Return requested element
 db.get(':el.price < 20000', {context: 'guitar > fender'}); // Again error
 ```
 
-Почти все методы Collection работают в рамках активного контекста (по умолчанию равен пустой строке),
-исключение составляют кластерные методы, например: getCollection (всегда будет возвращать искомую коллекцию вне зависимости от контекста).
+Almost all methods of Collection work is limited by an active context (by default it is an empty string),
+exception is a cluster's methods. For example: getCollection (always will return a necessary collection regardless of context).
 
 Для избежания ошибочных ситуаций контекст из кластера можно устанавливать только с помощью активности,
 т.е. нельзя например в forEach передать контекст по ИД.
