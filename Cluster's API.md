@@ -249,7 +249,7 @@ obj.isCollectionExists('bar') // true
 ### Cluster of collections
 
 Cluster of collections allow to encapsulate a set of collections in one instance of Collection.
-It is necessary to a work with storages of data.
+It is necessary for a work with storages of data.
 
 ```js
 var db = new Collection();
@@ -262,11 +262,11 @@ db.addCollection({
 db.saveAll();
 ```
 
-### Filter's cluster Кластер фильтров
+### Cluster of filters
 
-Следует помнить, что если фильтр указан активным, то он применяется всегда по умолчанию во всех итерационных методах, причём он «совмещается» с фильтрами, которые указываются явно.
-Should be note: if filter is specified active then it will be use how default in all iteration methods, so it combined with filters, which is explicitly specified
-Фильтры можно задавать также, как и в итерационных методах, т.е. как функции, строковые сокращения или составные фильтры по ИД.
+It should be noted: if filter marks as active then it will use as a default in all iteration methods, so it combined with explicitly specified filters,
+You can determine filters like in iteration methods, namely like functions, string reducing or combined filters by ID.
+
 
 
 ```js
