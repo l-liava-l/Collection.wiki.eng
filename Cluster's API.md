@@ -310,8 +310,8 @@ The active context, like active filter, «combined» with the specified explicit
 
 
 ```js
-// Создадим коллекцию, каталог музыкальных иснтрументов:
-// первичный уровень таблицы будет хеш-таблицей, где ключ - тип инструмента
+// Make new collection. The catalog of musical instruments:
+// the primary level of the table is a hash-table. As key we uses an instrument type
 var db = new Collection({
 	guitar: [
 		fender: [
@@ -332,18 +332,17 @@ var db = new Collection({
 	]
 });
 
-// Теперь выберем все гитары фирмы fender
-// для этого сделаем прямой запрос через get
+// So now we selecting all guitars by fender company
+// just direct get request =)
 db.get('guitar > fender');
 
-// Выберем модели, дешевле 20-ти тысяч
-db.get(':el.price < 20000'); // Ошибка, свойство price не найдено,
-                             // Т.к. отсчёт идёт с самого первого объекта, а не с guitar > fender
-
-// Выборка параметров с явным указанием контекста
+// We will chose all models cheaper than 20000
+db.get(':el.price < 20000'); // Error, the "price" option is not found,
+                             // Because the count begins with the first element, but not from guitar > fender
+// Selecting of options with the specified explicitly context.
 db.get(':el.price < 20000', {context: 'guitar > fender'});
 
-// ИЛИ
+// OR
 
 // Чтобы установить нужную точку отсчёта, установим активный контекст
 db.newContext('guitar > fender');
