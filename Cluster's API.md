@@ -378,7 +378,7 @@ db.getContext(); // 'a'
 
 ### Cluster of variables
 
-Временные переменные (var) — это просто возможность сохранять временные данные, не создавая внешних переменных, а внутри одного экземпляра Collection.
+A temporary variables (var) — it is just an opportunity to save intermittent data, without external variables, inside a single instance of Collection.
 
 ```js
 b.addVar({
@@ -386,15 +386,15 @@ b.addVar({
 	tmpObj: [1, 2, 3]
 });
 
-// Мы можем использовать сокращённую запись вызова переменной в строчных функциях (вместо getVar)
+// We can use a short record of variable call in string functions (instead of getVar)
 db.get(':el == ${i}');
 db.get(':el == this.getVar("i")');
 
 db.get(':i == ${tmpObj}[0]');
 ```
 
-Переменные следует использовать для передачи параметров в строковые сокращения фильтров,
-чтобы они могли эффективно оптимизироваться JIT компилятором Collection.
+Variables should be used to transfer parameters in string shorts of filters.
+Then it will optimized effectively a JIT compiller of Collection.
 
 ```js
 
@@ -409,15 +409,15 @@ db.get({filter: ':el !== #{val}', vars: {val: 1}});
 db.get({filter: ':el !== ${val}', vars: {val: 2}});
 ```
 
-## Сборка кластерных параметров
+## cluster's options building
 
-Метод **use** позволяет одновременно задать активное состояние для всех кластерных параметров по указанному пространству имён (если таковое есть).
+A **use** method alows us at the same time set an active status for all cluster's parametrs by specified namespace (if exist).
 
 ```js
 db.use('users');
 
-// Будут искаться параметры users.w.sub.next, затем: users.w.sub, users.w, users,
-// т.е. точка является разделителем
+// Will be search parameters users.w.sub.next, then: users.w.sub, users.w, users,
+// point is delimiter
 db.use('users.w.sub.next');
 ```
 
