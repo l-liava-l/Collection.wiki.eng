@@ -411,7 +411,7 @@ db.get({filter: ':el !== ${val}', vars: {val: 2}});
 
 ## cluster's options building
 
-A **use** method alows us at the same time set an active status for all cluster's parametrs by specified namespace (if exist).
+A **use** method allows us at the same time to set an active status for all cluster's parametrs by specified namespace (if exist).
 
 ```js
 db.use('users');
