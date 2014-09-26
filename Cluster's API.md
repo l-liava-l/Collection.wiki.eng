@@ -166,8 +166,7 @@ Set of methods:
 * getNamespace
 * getVar
 
-возвращают значение кластерного параметра.
-return value of cluster option
+return a value of cluster's option
 
 ```js
 var obj = $C();
@@ -179,8 +178,7 @@ obj.getCollection() // [1, 2, 3]
 obj.getCollection('foo') // [1]
 ```
 
-Пласт методов:
-Method's set
+Set of methods:
 
 * getCollections
 * getFilters
@@ -188,8 +186,7 @@ Method's set
 * getNamespaces
 * getVars
 
-возвращают сам кластер.
-returns the cluster itself
+return the cluster itself.
 
 ```js
 var obj = $C();
@@ -210,8 +207,7 @@ Set of methods:
 * activeNamespace
 * activeVar
 
-либо возвращают ИД активного параметра в кластере (если таковой есть)
-Or return ID of active option of cluster (if there is)
+return ID of active cluster's option (if there is one)
 
 ```js
 var obj = $C();
@@ -221,7 +217,7 @@ obj.activeCollection() // 'bar'
 ```
 
 , либо логическое значение (если id указан в вызове)
-, or logical value (if ID is specified in call)
+, or a logical value (if ID is specified in call)
 
 ```js
 var obj = $C();
@@ -240,8 +236,7 @@ Set of methods:
 * isNamespaceExists
 * isVarExists
 
-возвращают `true` если заданный параметр существует в кластере.
-return `true` if option exist in cluster
+return `true` if option exists in a cluster.
 
 ```js
 var obj = $C();
@@ -253,10 +248,8 @@ obj.isCollectionExists('bar') // true
 ## Addition
 ### Cluster of collections
 
-Кластер коллекций позволяет инкапсулировать в одном экземпляре Collection множество коллекций.
-В первую очередь это нужно для удобной работы с хранилищами данных.
-Cluster of collections allow to encapsulate set of collections in one instance Collection
-In the first place it need to work with storages of data
+Cluster of collections allow to encapsulate a set of collections in one instance of Collection.
+It is necessary to a work with storages of data.
 
 ```js
 var db = new Collection();
