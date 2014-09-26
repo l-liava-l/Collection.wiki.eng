@@ -344,17 +344,17 @@ db.get(':el.price < 20000', {context: 'guitar > fender'});
 
 // OR
 
-// Чтобы установить нужную точку отсчёта, установим активный контекст
+// For Чтобы установить нужную точку отсчёта, установим активный контекст
 db.newContext('guitar > fender');
 
-// Теперь снова сделаем get запрос
+// Again get request
 db.get(':el.price < 20000');
 
 // В случае задания в get по указателю, она также будет теперь отталкиваться от активного контекста
-db.get('guitar > fender > 0'); // Ошибка
-db.get('0'); // Вернёт запрашиваемый элемент
+db.get('guitar > fender > 0'); // Error
+db.get('0'); // Return requested element
 
-db.get(':el.price < 20000', {context: 'guitar > fender'}); // также будет ошибка
+db.get(':el.price < 20000', {context: 'guitar > fender'}); // again error
 ```
 
 Почти все методы Collection работают в рамках активного контекста (по умолчанию равен пустой строке),
@@ -376,7 +376,7 @@ db.parent(2);
 db.getContext(); // 'a'
 ```
 
-### Кластер переменных
+### Cluster of variables
 
 Временные переменные (var) — это просто возможность сохранять временные данные, не создавая внешних переменных, а внутри одного экземпляра Collection.
 
