@@ -1,10 +1,10 @@
-Cluster API is a unified set of methods, which provides functionality for working with collections. There are several clusters:
+Cluster's API is a unified set of methods, which provides functionality for a work with collections. There are several clusters:
 
 * collection — set of collections encapsulated in one instance of Collection;
-* filter — filter's set, you can to call they in "iterators";
-* context — pointer's set; (множество указателей)
+* filter — set of filters, you can call them in "iterators";
+* context — set of pointers;
 * namespace — set of namespaces for a work with localstorage;
-* var — set of variables encapsulated in one instance of Collection. (инкапсулированных в одном экземпляре Collection)
+* var — set of variables encapsulated in one instance of Collection.
 
 ##  Option activity
 
