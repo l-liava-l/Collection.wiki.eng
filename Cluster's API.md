@@ -358,13 +358,13 @@ db.get(':el.price < 20000', {context: 'guitar > fender'}); // Again error
 ```
 
 Almost all methods of Collection work is limited by an active context (by default it is an empty string),
-exception is a cluster's methods. For example: getCollection (always will return a necessary collection regardless of context).
+exception is a cluster's methods. For example: getCollection (always return a necessary collection regardless of context).
 
-Для избежания ошибочных ситуаций контекст из кластера можно устанавливать только с помощью активности,
-т.е. нельзя например в forEach передать контекст по ИД.
+To avoid wrong situations you can set a cluster's context only by activity,
+namely you can't transfer a context to forEach by ID.
 
-В дополнение к стандартным методам у кластера контектов есть ещё несколько дополнительных: **parent** и **parentContext**.
-Первый меняет активный контекст на n (по умолчанию на 1) уровней вверх, а метод parentContext возвращает родительский контекст.
+in additional to standard methods there are a few extra **parent** and **parentContext** in cluster's context.
+The first one change an active context on n (by default is 1) levels up and `parentContext` return a parent context.
 
 ```js
 db.newContext('a > b > c');
