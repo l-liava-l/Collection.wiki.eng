@@ -24,7 +24,7 @@ Set of methods:
 * newNamespace
 * newVar
 
-add a new active option but don't add it to cluster.
+add a new active option but don't add it to a cluster.
 
 ```js
 var obj = $C();
@@ -43,7 +43,7 @@ Set of methods:
 * addNamespace
 * addVar
 
-add an option to cluster but don't mark it active
+add an option to a cluster but don't mark it active
 
 
 there are 2 forms of calling method:
@@ -72,8 +72,7 @@ Set of methods:
 * addAndSetNamespace
 * addAndSetVar
 
-добавляют параметр в кластер и делают его активным.
-add a option to cluster and make it active
+add an option to a cluster and mark it active
 
 ```js
 var obj = $C();
@@ -93,8 +92,7 @@ Set of methods:
 * setNamespace
 * setVar
 
-делают указанный параметр активным.
-make specified option active
+mark current option as active.
 
 ```js
 var obj = $C();
@@ -119,8 +117,7 @@ Set of methods:
 * dropNamespace
 * dropVar
 
-удаляют указанный параметр из кластера.
-delete specified option from cluster
+delete current option from a cluster
 
 ```js
 var obj = $C();
@@ -128,7 +125,7 @@ var obj = $C();
 obj.addCollection('foo', [1, 2, 3]);
 obj.addAndSetCollection('bar', [1, 2, 3]);
 
-// Also you can to use keyword active Можно также использовать ключевое слово active
+// You can also use the keyword "active"
 
 obj.dropCollection('foo', 'bar');
 obj.get() // []
@@ -144,7 +141,7 @@ Set of methods:
 * updateNamespace
 * updateVar
 
-update specified option of cluster обновляют указанный кластерный параметр.
+update cluster's current option.
 
 ```js
 var obj = $C();
