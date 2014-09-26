@@ -288,14 +288,14 @@ db.addFilter({
 	extrim: 'getByLvlAndAge || getKoba'
 });
 
-// Get value with use filter extrim Получим значения по фильтру extrim
+// We will get a value with using filter extrim
 db.get('extrim');
 
-// Set filter to active Установка активного фильтра
+// Settign filter to active
 db.setFilter('getKoba')
 
-// Make request with use filter getByLvlAndAge Сделаем запрос по фильтру getByLvlAndAge,
-// but because we use getKoba how active filter request have been type getKoba && getByLvlAndAge но т.к. у нас активный фильтр getKoba, то результирующий запрос будет типа getKoba && getByLvlAndAge
+// Make a request with using of filter getByLvlAndAge,
+// And because we have an active getKoba so the resulting request will be like getKoba && getByLvlAndAge
 
 db.get('getByLvlAndAge');
 
@@ -303,9 +303,11 @@ db.get('getByLvlAndAge');
 db.get();
 ```
 
-### Context's cluster Кластер контекстов
+### Cluster of contexts
 
-Контекст — это механизм Collection который позволяет задать «точку старта» для поиска и выборки элементов. Активный контекст, также как и фильтр, «совмещается» с указанным явно.
+Context is a mechanism of Collection which allows to define the «start point» for a search and selecting among elements.
+The active context, like active filter, «combined» with the specified explicitly.
+
 
 ```js
 // Создадим коллекцию, каталог музыкальных иснтрументов:
