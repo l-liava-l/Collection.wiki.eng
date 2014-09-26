@@ -305,13 +305,13 @@ db.get();
 
 ### Cluster of contexts
 
-Context is a mechanism of Collection which allows to define the «start point» for a search and selecting among elements.
-The active context, like active filter, «combined» with the specified explicitly.
+Context is a mechanism of Collection which allows to define the «start point» for a searching and selecting among elements.
+The active context like active filter «combined» with specified explicitly.
 
 
 ```js
-// Make new collection. The catalog of musical instruments:
-// the primary level of the table is a hash-table. As key we uses an instrument type
+// Make a new collection. The catalog of music instruments:
+// the primary level of the table is a hash-table. As a key we use an instrument type
 var db = new Collection({
 	guitar: [
 		fender: [
@@ -332,29 +332,29 @@ var db = new Collection({
 	]
 });
 
-// So now we selecting all guitars by fender company
+// So now we select all guitars by fender company
 // just direct get request =)
 db.get('guitar > fender');
 
-// We will chose all models cheaper than 20000
+// Chose all models cheaper than 20000
 db.get(':el.price < 20000'); // Error, the "price" option is not found,
-                             // Because the count begins with the first element, but not from guitar > fender
-// Selecting of options with the specified explicitly context.
+                             // Because the count begins with the first element, not from guitar > fender
+// A selection of options with the specified explicitly context.
 db.get(':el.price < 20000', {context: 'guitar > fender'});
 
 // OR
 
-// For Чтобы установить нужную точку отсчёта, установим активный контекст
+// to established a necessery start point we establish an active context
 db.newContext('guitar > fender');
 
-// Again get request
+// Again do a get request
 db.get(':el.price < 20000');
 
-// В случае задания в get по указателю, она также будет теперь отталкиваться от активного контекста
+// When "get" set by pointer, it will also use an active context.
 db.get('guitar > fender > 0'); // Error
 db.get('0'); // Return requested element
 
-db.get(':el.price < 20000', {context: 'guitar > fender'}); // again error
+db.get(':el.price < 20000', {context: 'guitar > fender'}); // Again error
 ```
 
 Почти все методы Collection работают в рамках активного контекста (по умолчанию равен пустой строке),
